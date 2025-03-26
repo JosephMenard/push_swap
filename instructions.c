@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instructions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseph <joseph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmenard <jmenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/28 14:15:04 by jmenard           #+#    #+#             */
-/*   Updated: 2024/07/27 15:55:14 by joseph           ###   ########.fr       */
+/*   Updated: 2024/09/25 17:55:26 by jmenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,13 @@ void	push(t_list **source, t_list **dest, char c)
 
 void	print_stack(t_list **stk, char c)
 {
-	int	i;
+	int		i;
+	int		stk_len;
 	t_list	*stack;
 
 	i = 1;
 	stack = *stk;
+	stk_len = ft_lstsize(stack);
 	while (stack)
 	{
 		printf("==================================\n");
@@ -116,6 +118,7 @@ void	print_stack(t_list **stk, char c)
 		printf("content  ; %ld \n", stack->content);
 		printf("target  ; %d \n", stack->target);
 		printf("cost  ; %d \n", stack->cost);
+		printf("goal  ; %d \n", stack->goal);
 		printf("==================================\n");
 		stack = stack->next;
 		i++;

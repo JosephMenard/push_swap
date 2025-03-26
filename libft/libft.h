@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseph <joseph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmenard <jmenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:29:20 by jmenard           #+#    #+#             */
-/*   Updated: 2024/07/26 16:27:19 by joseph           ###   ########.fr       */
+/*   Updated: 2024/09/25 19:28:11 by jmenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_list
 	long int		content;
 	int				target;
 	int				cost;
+	int				goal;
 	struct s_list	*prev;
 	struct s_list	*next;
 }					t_list;
@@ -34,7 +35,8 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strdup(char *src);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
-char				*ft_strnstr(const char *big, const char *little, size_t len);
+char				*ft_strnstr(const char *big,
+						const char *little, size_t len);
 char				*ft_itoa(int n);
 char				**ft_split(char *str, char charset);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -46,7 +48,8 @@ size_t				ft_strlcpy(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t n);
 t_list				*ft_lstnew(long int content);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, long int (*f)(long int), void (*del)(long int));
+t_list				*ft_lstmap(t_list *lst,
+						long int (*f)(long int), void (*del)(long int));
 
 void				ft_striteri(char *s, void (*f)(unsigned int, char*));
 void				ft_putchar_fd(char c, int fd);

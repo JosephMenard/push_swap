@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: joseph <joseph@student.42.fr>              +#+  +:+       +#+         #
+#    By: jmenard <jmenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/28 14:18:01 by jmenard           #+#    #+#              #
-#    Updated: 2024/07/28 18:00:53 by joseph           ###   ########.fr        #
+#    Updated: 2024/09/25 16:27:09 by jmenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 INCLUDES = push_swap.h
 
 SRC = instructions.c instruction_bis.c verifs_create.c mediane.c cost.c sort.c\
-main.c
+main.c mediane_bis.c put_top.c
 
 OBJ = $(SRC:.c=.o)
 CC = cc

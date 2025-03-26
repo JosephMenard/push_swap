@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mediane.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joseph <joseph@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jmenard <jmenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 16:53:40 by jmenard           #+#    #+#             */
-/*   Updated: 2024/07/27 16:57:13 by joseph           ###   ########.fr       */
+/*   Updated: 2024/09/26 14:47:54 by jmenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	create_tab_int(t_list **stack_a)
 {
-	int	*tab_of_int;
-	int	tab_len;
-	int	i;
+	int		*tab_of_int;
+	int		tab_len;
+	int		i;
 	t_list	*stack;
 
 	i = 0;
@@ -64,9 +64,9 @@ int	calcule_mediane(int *tab_of_int, int tab_len, t_list **stack_a)
 
 void	put_target(t_list **stack_a, int *tab_of_int, int tab_len)
 {
-	int	i;
-	t_list *stack;
-	
+	int		i;
+	t_list	*stack;
+
 	stack = *stack_a;
 	while (stack)
 	{
@@ -81,28 +81,21 @@ void	put_target(t_list **stack_a, int *tab_of_int, int tab_len)
 	}
 }
 
-void	push_in_b(t_list **stack_a, t_list **stack_b, int mediane)
+void	push_b_mini_sort(t_list **stack_a, t_list **stack_b)
 {
-	int	i;
-	int	len_stack;
 	t_list	*a;
-	
+	int		a_len;
+
 	a = *stack_a;
-	i = 0;
-	len_stack = ft_lstsize(a);
-	while (i < len_stack)
+	a_len = ft_lstsize(a);
+	if (a_len == 4)
 	{
-		a = *stack_a;
-		if (a->content > mediane)
-			push(stack_a, stack_b, 'b');
-		else if (a->content < mediane)
-		{
-			push(stack_a, stack_b, 'b');
-			rotate(stack_b, 'b');
-		}
-		else if (a->content == mediane)
-			rotate(stack_a, 'a');
-		a = a->next;
-		i++;
+		push(stack_a, stack_b, 'b');
+		return ;
+	}
+	while (a_len > 3)
+	{
+		push(stack_a, stack_b, 'b');
+		a_len--;
 	}
 }
